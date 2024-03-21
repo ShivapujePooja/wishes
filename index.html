@@ -1,0 +1,189 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Congratulations!</title>
+    <style>
+      /* CSS for styling */
+      .container {
+        text-align: center;
+        padding: 50px;
+      }
+      #message,
+      #photos {
+        display: none;
+      }
+      #photos img {
+        margin: 10px;
+        width: 300px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Congratulations on Your Promotion!</h1>
+      <a href="#" id="showMessage">Click here to see the message and photos</a>
+      <div id="message">
+        <p>Dear Brothers,</p>
+        <p>
+          Congratulations on your promotion to senior directors! Wishing you
+          continued success and prosperity in your careers.
+        </p>
+      </div>
+      <div id="photos">
+        <img src="vinay_bro1.jpg" alt="Brother 1 Photo" />
+        <img src="guru_bro1.jpg" alt="Brother 2 Photo" />
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to handle displaying message and photos on click
+      document
+        .getElementById("showMessage")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          document.getElementById("showMessage").style.display = "none";
+          document.getElementById("message").style.display = "block";
+          document.getElementById("photos").style.display = "block";
+        });
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Congratulations!</title>
+    <style>
+      /* CSS for styling */
+      body {
+        font-family: Arial, sans-serif;
+        color: #ffffff; /* Set text color to white for better visibility */
+        overflow: hidden; /* Prevent horizontal scrollbars */
+        position: relative;
+      }
+      .container {
+        text-align: center;
+        padding: 50px;
+      }
+      #message,
+      #photos {
+        display: none;
+      }
+      #photos img {
+        margin: 10px;
+        width: 300px;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+      }
+      #photo1 {
+        left: -300px; /* Initial position off-screen to the left */
+        animation-name: slideFromLeft;
+      }
+      #photo2 {
+        right: -300px; /* Initial position off-screen to the right */
+        animation-name: slideFromRight;
+      }
+      #fireworks {
+        font-size: 40px; /* Initial font size */
+        animation: flip 2s infinite; /* Flip animation */
+      }
+      .congratulation-text {
+        color: #deb6dc; /* Change text color to red */
+        font-size: 20px; /* Increase font size */
+      }
+
+      @keyframes slideFromLeft {
+        from {
+          left: -300px;
+        }
+        to {
+          left: 50%; /* Final position */
+        }
+      }
+
+      @keyframes slideFromRight {
+        from {
+          right: -300px;
+        }
+        to {
+          right: 50%; /* Final position */
+        }
+      }
+
+      @keyframes flip {
+        0% {
+          transform: rotateY(0deg); /* Start from 0 degree rotation */
+        }
+        100% {
+          transform: rotateY(360deg); /* Rotate 360 degrees */
+        }
+      }
+
+      /* Overlay with blur effect */
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("pataka.jpg"); /* Background image */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        filter: blur(5px); /* Add blur effect */
+        z-index: -1; /* Position behind other content */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="congrats">Congratulations my dear lovely Brothers! ❤️🥳🥰🥳❤️</h1>
+      <a href="#" id="showMessage">Click here to see the message and photos</a>
+      <div id="message">
+        <p>Dear Brothers,</p>
+        <p class="congratulation-text">
+          Congratulations on your promotion to senior directors!!!!... and
+          senior technical lead!!!!!!.... Wishing you continued success and
+          prosperity in your careers.
+        </p>
+      </div>
+      <div id="photos">
+        <img src="guru_bro1.jpg" alt="Brother 1 Photo" id="photo1" />
+        <img src="vinay_bro1.jpg" alt="Brother 2 Photo" id="photo2" />
+      </div>
+      <p id="fireworks">🎆🎇🌟</p>
+      <!-- Fireworks emoji -->
+    </div>
+
+    <div class="overlay"></div>
+
+    <script>
+      // JavaScript to handle displaying message and photos on click
+      document
+        .getElementById("showMessage")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          document.getElementById("showMessage").style.display = "none";
+          document.getElementById("message").style.display = "block";
+          document.getElementById("photos").style.display = "block";
+          document.getElementById("congrats").style.fontSize = "40px"; // Increase font size
+
+          // Add emojis below photos
+          const fireworksEmoji = document.createElement("p");
+          fireworksEmoji.innerHTML = "🎆🎇🌟";
+          document.getElementById("photos").appendChild(fireworksEmoji);
+
+          // Add blur effect to overlay
+          document.querySelector(".overlay").style.filter = "blur(5px)";
+        });
+    </script>
+  </body>
+</html>
